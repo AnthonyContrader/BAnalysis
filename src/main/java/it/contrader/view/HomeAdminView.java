@@ -4,7 +4,6 @@
 
 package it.contrader.view;
 
-
 /**
  * Per Ulteriori dettagli vedi Guida sez 9 View.
  * Per la descrizione dei metodi vedi l'interfaccia View in questo pacchetto.
@@ -14,67 +13,73 @@ import it.contrader.main.MainDispatcher;
 
 public class HomeAdminView extends AbstractView {
 
-    private String choice;
-    
+	private String choice;
+
 	private Request request;
 
 	/**
 	 * Se la request non � nulla mostra un messaggio di benvenuto
 	 */
-    public void showResults(Request request) {
-    	if(request!=null) {
-    	System.out.println("\n Benvenuto in SAMPLE PROJECT "+request.get("username").toString() + "\n");
-    	}
-    }
+	public void showResults(Request request) {
+		if (request != null) {
+			System.out.println("\n Benvenuto in SAMPLE PROJECT " + request.get("username").toString() + "\n");
+		}
+	}
 
+	/**
+	 * Chiede all'utente di effettuare una scelta (da console)
+	 */
+	public void showOptions() {
+		System.out.println("           -------------MENU ADMIN------------\n");
+		System.out.println("               Seleziona cosa vuoi gestire:");
+		System.out.println("[U]tenti  [D]ati Clienti  [O]rdini [F]ornitori [M]agazzini [E]sci");
+		// Il metodo che salva l'input nella stringa choice.
+		// getInput() � definito in AbstractView.
+		choice = this.getInput();
+	}
 
-    /**
-     * Chiede all'utente di effettuare una scelta (da console)
-     */
-    public void showOptions() {
-        System.out.println("-------------MENU------------\n");
-        System.out.println(" Seleziona cosa vuoi gestire:");
-        System.out.println("[U]tenti  [D]ati Clienti  [O]rdini [F]ornitori [M]agazzini [E]sci");
-        //Il metodo che salva l'input nella stringa choice.
-        //getInput() � definito in AbstractView.
-        choice = this.getInput();
-    }
+	/**
+	 * Impacchetta una request (in base alla scelta sar� diversa) che invia ai
+	 * controller tramite il Dispatcher
+	 */
+	public void submit() {
+		// crea una nuova Request (vedi classe Request)
+		request = new Request();
+		switch (choice) {
+		case "u":
+			this.request.put("mode", "USERLIST");
+			MainDispatcher.getInstance().callAction("User", "doControl", request);
+			break;
 
-    /**
-     * Impacchetta una request (in base alla scelta sar� diversa) che invia ai controller tramite il
-     * Dispatcher
-     */
-    public void submit() {    
-    	//crea una nuova Request (vedi classe Request)
-    	request = new Request();
-        switch (choice) {
-        case "u":
-        	this.request.put("mode", "USERLIST");
-        	MainDispatcher.getInstance().callAction("User", "doControl", request);
-        	break;
- 
-        case "e":
-        	MainDispatcher.getInstance().callAction("Login", "doControl", null);
-        	break;
-        	
-        	//riguarda controller Jacopo
-        	
-        case "o":
-        	this.request.put("mode", "ORDERLIST");
-        	MainDispatcher.getInstance().callAction("Order", "doControl", request);
-        	break;
-        
-//        case "s":
-//        	MainDispatcher.getInstance().callAction("Supplier", "doControl", request);
-//        	break;
-        	
-        	
-       
-        	
-        default:
-        	
-            request.put("choice", choice);
-        	MainDispatcher.getInstance().callAction("Login", "doControl", request);
-        }
-    }
+		case "e":
+			MainDispatcher.getInstance().callAction("Login", "doControl", null);
+			break;
+
+		case "o":
+			this.request.put("mode", "ORDERLIST");
+			MainDispatcher.getInstance().callAction("Order", "doControl", request);
+			break;
+
+		case "f":
+			this.request.put("mode", "SUPPLIERLIST");
+			MainDispatcher.getInstance().callAction("Supplier", "doControl", request);
+			break;
+
+		case "d":
+			this.request.put("mode", "DATACUSTOMERLIST");
+			MainDispatcher.getInstance().callAction("DataCustomer", "doControl", request);
+			break;
+			
+		case "m":
+			this.request.put("mode", "WAREHOUSELIST");
+			MainDispatcher.getInstance().callAction("Warehouse", "doControl", request);
+			break;
+			
+
+		default:
+
+			request.put("choice", choice);
+			MainDispatcher.getInstance().callAction("Login", "doControl", request);
+		}
+	}
 }
