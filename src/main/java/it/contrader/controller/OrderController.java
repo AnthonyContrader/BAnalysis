@@ -132,7 +132,7 @@ public class OrderController implements Controller {
 				break;
 
 			case "B":
-				MainDispatcher.getInstance().callView("HomeOrder", null);
+				MainDispatcher.getInstance().callView("HomeAdmin", null);
 				break;
 
 			default:
