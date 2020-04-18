@@ -19,7 +19,7 @@ public class UserUpdateView extends AbstractView {
 	}
 
 	/**
-	 * Se la request non è nulla (ovvero se si arriva dalla mode UPDATE del controller) mostra
+	 * Se la request non ï¿½ nulla (ovvero se si arriva dalla mode UPDATE del controller) mostra
 	 * l'esito dell'operazione
 	 */
 	@Override
@@ -36,6 +36,7 @@ public class UserUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
+			
 			System.out.println("Inserisci id dell'utente:");
 			id = Integer.parseInt(getInput());
 			System.out.println("Inserisci username dell'utente:");

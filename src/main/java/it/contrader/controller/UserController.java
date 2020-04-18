@@ -31,10 +31,10 @@ public class UserController implements Controller {
 	
 	/**
 	 * Metodo dell'interfaccia Controller. Estrae dalla request la mode
-	 * (che riceve dalle view specifiche e può essere la richesta di una 
+	 * (che riceve dalle view specifiche e puï¿½ essere la richesta di una 
 	 * scelta da parte dell'utente "GETCHOICE") e la scelta dell'utente.
 	 * 
-	 * Se la modalità corrisponde ad una CRUD il controller chiama i service,
+	 * Se la modalitï¿½ corrisponde ad una CRUD il controller chiama i service,
 	 * altrimenti rimanda alla View della CRUD per richiedere i parametri
 	 */
 	@Override
@@ -103,12 +103,13 @@ public class UserController implements Controller {
 			
 		//Arriva qui dalla UserView Invoca il Service e invia alla UserView il risultato da mostrare 
 		case "USERLIST":
+			System.out.println("Sono nella userlist");
 			List<UserDTO> usersDTO = userService.getAll();
+			System.out.println(usersDTO);
 			//Impacchetta la request con la lista degli user
 			request.put("users", usersDTO);
 			MainDispatcher.getInstance().callView("User", request);
-			break;
-			
+ 			
 		//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
 		//con REQUEST NULL (vedi una View specifica)
 		case "GETCHOICE":
