@@ -1,8 +1,11 @@
 #*target*
 
+
 */target/*
 *properties
 *.DS*
+db/*
+
 db/*
 
 # eclipse specific git ignore
