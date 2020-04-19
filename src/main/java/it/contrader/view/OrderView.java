@@ -10,14 +10,13 @@ public class OrderView extends AbstractView {
 	private Request request;
 	private String choice;
 
-	
 	public OrderView() {
 	}
-	
+
 	// mostro la lista ordini
 	@Override
 	public void showResults(Request request) {
-		System.out.println(request == null);
+//		System.out.println(request == null);
 		if (request != null) {
 			System.out.println("\n-------------------GESTIONE ORDINI----------------\n");
 			System.out.println("ID\tQuantita\tNumero Ordine\tData");
@@ -27,13 +26,14 @@ public class OrderView extends AbstractView {
 			List<OrderDTO> orders = (List<OrderDTO>) request.get("orders");
 			for (OrderDTO o : orders)
 				System.out.println(o);
-			System.out.println();
+		System.out.println();
+
 		}
-		 
 
 	}
 
-	// chiedo all'utente di effettuare una scelta da console per la choice (tutto a OrderController)
+	// chiedo all'utente di effettuare una scelta da console per la choice (tutto a
+	// OrderController)
 	@Override
 	public void showOptions() {
 		System.out.println("          Scegli l'operazione da effettuare:");

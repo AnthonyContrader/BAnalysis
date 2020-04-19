@@ -81,7 +81,7 @@ public class OrderController implements Controller {
 
 		// Arriva qui dalla OrderUpdateView
 		case "UPDATE":
-			System.out.println("Sono nell'update");
+//			System.out.println("Sono nell'update");
 			id = Integer.parseInt(request.get("id").toString());
 			quantity = Integer.parseInt(request.get("quantity").toString());
 			orderNumber = request.get("orderNumber").toString();
@@ -96,7 +96,7 @@ public class OrderController implements Controller {
 
 		// arrivo qua dalla orderView
 		case "ORDERLIST":
-			System.out.println("order list");
+//			System.out.println("order list");
 			List<OrderDTO> ordersDTO = orderService.getAll();
 			// Impacchetta la request con la lista degli order
             //			request = new Request();
@@ -128,7 +128,7 @@ public class OrderController implements Controller {
 				break;
 
 			case "E":
-				MainDispatcher.getInstance().callView("Order", null);
+				MainDispatcher.getInstance().callView("Login", null);
 				break;
 
 			case "B":
@@ -137,13 +137,13 @@ public class OrderController implements Controller {
 
 			default:
 //				System.out.println("Sono nel primo default");
-				MainDispatcher.getInstance().callView("Order", null);
+				MainDispatcher.getInstance().callView("Login", null);
 
 			}
 
 		default:
 //			System.out.println("Sono nel secondo default");
-			MainDispatcher.getInstance().callView("Order", null);
+			MainDispatcher.getInstance().callView("Login", null);
 		}
 	}
 }

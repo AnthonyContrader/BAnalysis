@@ -13,7 +13,7 @@ public class OrderUserInsertView extends AbstractView {
 	private final String mode = "INSERT";
 
 	public OrderUserInsertView() {
-		System.out.println("Sono in OrderUserInsert");
+//		System.out.println("Sono in OrderUserInsert");
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class OrderUserInsertView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-		System.out.println("showOptions in OrderUserInsert");
+//		System.out.println("showOptions in OrderUserInsert");
 		System.out.println("Scegli la quantita da inserire");
 		quantity = Integer.parseInt(getInput());
 		System.out.println("Inserisci il codice dell'ordine:");
