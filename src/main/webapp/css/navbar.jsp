@@ -13,8 +13,7 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-	<div class="navbar">
-		
+	<div class="navbar">		
 		<c:set var="String" value="${user.getUsertype()}"/><!-- setto la stringa con usertype -->
 	
 		<a href="homeadmin.jsp">Home</a>
