@@ -8,12 +8,10 @@
 <title>Edit Supplier</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="SupplierServlet?mode=supplierlist">Suppliers</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+<%@include file="../css/navbar.jsp"%>
+
 <br>
 <div class="main">
 

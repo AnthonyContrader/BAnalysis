@@ -20,6 +20,4 @@ public class UserService extends AbstractService<User, UserDTO> {
 		this.dao = new UserDAO();
 		this.converter = new UserConverter();
 	}
-	
-
 }

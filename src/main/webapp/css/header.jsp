@@ -8,10 +8,8 @@
 </head>
 <body>
 
-<div class="header">SAMPLE Project
+<div class="header">B-Analysis
 </div>
-
-
 
 </body>
 </html>

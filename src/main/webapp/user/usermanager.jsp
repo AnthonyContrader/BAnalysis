@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.List"
 	import="it.contrader.dto.UserDTO"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +12,25 @@
 <title>User Manager</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
 
-<div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+<%@ include file="../css/header.jsp" %>
+<%@include file="../css/navbar.jsp"%>
+
 <div class="main">
 	<%
 		List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
 	%>
-
-<br>
-
+	<br>
+	
+	
+	
 	<table>
 		<tr>
 			<th>Username</th>
 			<th>Password</th>
 			<th>Usertype</th>
 			<th></th>
-			<th></th>
+			<th></th>			
 		</tr>
 		<%
 			for (UserDTO u : list) {
@@ -44,7 +45,6 @@
 			</td>
 			<td><a href=UserServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
 			</td>
-
 		</tr>
 		<%
 			}

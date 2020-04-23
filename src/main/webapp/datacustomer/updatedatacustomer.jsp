@@ -8,12 +8,10 @@
 <title>Modifica Dati Clienti</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="DataCustomerServlet?mode=datacustomerlist">Dati Clienti</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+<%@include file="../css/navbar.jsp"%>
+
 <br>
 <div class="main">
 

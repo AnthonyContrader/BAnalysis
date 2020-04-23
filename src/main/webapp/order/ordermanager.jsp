@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.List"
 	import="it.contrader.dto.OrderDTO"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<!-- import per l'if else e ottenere l'id utente-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 
 <!DOCTYPE html>
@@ -12,16 +13,9 @@
 <title>Order Manager</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
-
-<div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="OrderServlet?mode=orderlist">Order</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
-
-
-
+<%@include file="../css/navbar.jsp"%>
 
 <div class="main">
 	<%
@@ -36,10 +30,9 @@
 			<th>Order Number</th>
 			<th>Date</th>
 				<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
-			
-			<th></th>
-			<th></th>
-						</c:if>  
+					<th></th>
+					<th></th>
+				</c:if>  
 			
 		</tr>
 		<%
@@ -47,19 +40,16 @@
 		%>
 		<tr>
 			<td>
-			
-			<%=o.getQuantity()%>
-			
-			</a></td>
-			<td><a href=OrderServlet?mode=read&id=<%=o.getId()%>><%=o.getOrderNumber()%></td>
+				<%=o.getQuantity()%>
+			</td>
+			<td><a href=OrderServlet?mode=read&id=<%=o.getId()%>><%=o.getOrderNumber()%></a></td>
 			<td><%=o.getDate()%></td>
-			
 			 
 			<c:if test="${fn:containsIgnoreCase(String, 'admin')}">   
-			<td><a href=OrderServlet?mode=read&update=true&id=<%=o.getId()%>>Edit</a>
-			</td>
-			<td><a href=OrderServlet?mode=delete&id=<%=o.getId()%>>Delete</a>
-			</td>  
+				<td><a href=OrderServlet?mode=read&update=true&id=<%=o.getId()%>>Edit</a>
+				</td>
+				<td><a href=OrderServlet?mode=delete&id=<%=o.getId()%>>Delete</a>
+				</td>  
 			</c:if>  
  
 		</tr>
@@ -67,7 +57,6 @@
 			}
 		%>
 	</table>
-
 
 
 <form id="floatright" action="OrderServlet?mode=insert" method="post">

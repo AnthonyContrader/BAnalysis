@@ -8,16 +8,14 @@
 <title>Read Order</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active"  href="OrderServlet?mode=orderlist">Orders</a>
-</div>
+<%@include file="../css/navbar.jsp"%>
+
 <br>
 
 <div class="main">
 <%OrderDTO o = (OrderDTO) request.getAttribute("dto");%>
-
 
 <table>
 	<tr> 

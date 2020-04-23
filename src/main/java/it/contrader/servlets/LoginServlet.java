@@ -34,25 +34,25 @@ public class LoginServlet extends HttpServlet {
 			String password = request.getParameter("password").toString();
 			//come nei vecchi controller, invoca il service
 			UserDTO dto = service.login(username, password);
-			if (dto != null)
+			if (dto != null) {
 				//se il login ha funzionato, salva l'utente nella sessione
-				session.setAttribute("user", dto);
-			else
+				session.setAttribute("user", dto);}
+			else {
 				//altrimenti torna alla pagina di login
-				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);}
 			
 			//esegue una switch cae in base allo usertype per il reindirizzamento
 			switch (dto.getUsertype().toUpperCase()) {
-			case "ADMIN":
-				//questo metodo reindirizza alla JSP tramite URL con una request e una response
-				getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
-				break;
-				
-			case "USER":
-				getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
-				break;
-				
-			default:
+				case "ADMIN":
+					//questo metodo reindirizza alla JSP tramite URL con una request e una response
+					getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
+					break;
+					
+				case "USER":
+					getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
+					break;
+					
+				default:
 				//di default rimanda al login
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 				break;

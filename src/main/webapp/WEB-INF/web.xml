@@ -32,4 +32,51 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+
+  <!--mapping servlet nuove-->
+  <servlet>
+    <description></description>
+    <display-name>DataCustomerServlet</display-name>
+    <servlet-name>DataCustomerServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.DataCustomerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataCustomerServlet</servlet-name>
+    <url-pattern>/DataCustomerServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>SupplierServlet</display-name>
+    <servlet-name>SupplierServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.SupplierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupplierServlet</servlet-name>
+    <url-pattern>/SupplierServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>OrderServlet</display-name>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.OrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/OrderServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>WarehouseServlet</display-name>
+    <servlet-name>WarehouseServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.WarehouseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WarehouseServlet</servlet-name>
+    <url-pattern>/WarehouseServlet</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>

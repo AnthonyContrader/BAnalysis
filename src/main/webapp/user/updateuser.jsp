@@ -8,17 +8,14 @@
 <title>Edit User</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+<%@include file="../css/navbar.jsp"%>
+
 <br>
 <div class="main">
 
 <%UserDTO u = (UserDTO) request.getAttribute("dto");%>
-
 
 <form id="floatleft" action="UserServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
@@ -51,9 +48,8 @@
   </div>
       <button type="submit" >Edit</button>
 </form>
-
-	
 </div>
+
 <br>
 <%@ include file="../css/footer.jsp" %>	
 </body>

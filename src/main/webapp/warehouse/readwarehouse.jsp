@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.WarehouseDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Read User</title>
+<title>Read Magazzini</title>
 </head>
 <body>
 
@@ -14,19 +14,19 @@
 
 <br>
 <div class="main">
+<%WarehouseDTO w = (WarehouseDTO) request.getAttribute("dto");%>
 
-<%UserDTO u = (UserDTO) request.getAttribute("dto");%>
 
 <table>
 	<tr> 
-		<th>Username</th>
-		<th>Password</th>
-		<th>Usertype</th>
+		<th>Magazzino N</th>
+		<th>Citta'</th>
+		<th>Capacita'</th>
 	</tr>
 	<tr>
-		<td><%=u.getUsername()%></td>
-		<td> <%=u.getPassword()%></td>
-		<td> <%=u.getUsertype()%></td>
+		<td><%=w.getId()%></td>
+		<td> <%=w.getCity()%></td>
+		<td> <%=w.getCapacity()%></td>
 	</tr>	
 </table>
 
@@ -44,7 +44,6 @@
 <br>
 <br>
 <br>
-
 
 </div>
 
