@@ -324,4 +324,12 @@ div.navbar a.active {
 	z-index: -1; opacity : .9;
 	width: 8%;
 }
+
+/*section title*/
+
+h1.table_title {
+	color: #00a990;
+	font-size: 140%;
+}
+
 }

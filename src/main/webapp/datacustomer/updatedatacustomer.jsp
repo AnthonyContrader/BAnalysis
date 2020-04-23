@@ -13,6 +13,9 @@
 <%@include file="../css/navbar.jsp"%>
 
 <br>
+<h1 class="table_title">UPDATE CUSTOMER</h1>
+
+<br>
 <div class="main">
 
 <%DataCustomerDTO d = (DataCustomerDTO) request.getAttribute("dto");%>

@@ -17,6 +17,8 @@
 <%@ include file="../css/header.jsp" %>
 <%@include file="../css/navbar.jsp"%>
 
+<br>
+<h1 class="table_title">WAREHOUSES</h1>
 
 <div class = "main">
 

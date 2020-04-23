@@ -16,6 +16,9 @@
 <%@ include file="../css/header.jsp" %>
 <%@include file="../css/navbar.jsp"%>
 
+<br>
+<h1 class="table_title">CUSTOMERS</h1>
+
 <div class="main">
 	<%
 		List<DataCustomerDTO> list = (List<DataCustomerDTO>) request.getAttribute("list");

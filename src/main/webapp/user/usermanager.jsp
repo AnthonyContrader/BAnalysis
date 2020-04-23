@@ -16,13 +16,14 @@
 <%@ include file="../css/header.jsp" %>
 <%@include file="../css/navbar.jsp"%>
 
+<br>
+<h1 class="table_title">USERS</h1>
+
 <div class="main">
 	<%
 		List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
 	%>
 	<br>
-	
-	
 	
 	<table>
 		<tr>

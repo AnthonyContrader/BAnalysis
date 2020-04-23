@@ -13,6 +13,9 @@
 <%@include file="../css/navbar.jsp"%>
 
 <br>
+<h1 class="table_title">USER DETAILS</h1>
+
+<br>
 <div class="main">
 
 <%UserDTO u = (UserDTO) request.getAttribute("dto");%>
