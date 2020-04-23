@@ -8,6 +8,7 @@
 <title>Leggi Dati Clienti</title>
 </head>
 <body>
+
 <%@ include file="../css/header.jsp" %>
 <%@include file="../css/navbar.jsp"%>
 

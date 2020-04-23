@@ -17,7 +17,6 @@
 
 <%DataCustomerDTO d = (DataCustomerDTO) request.getAttribute("dto");%>
 
-
 <form id="floatleft" action="DataCustomerServlet?mode=update&id=<%=d.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
