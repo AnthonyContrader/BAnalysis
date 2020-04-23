@@ -26,11 +26,11 @@
     <c:set var="String" value="${user.getUsertype()}"/> 
 	<table>
 		<tr>
-			<th>Nome</th>
-			<th>Cognome</th>
-			<th>Età</th>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Age</th>
 			<th>Email</th>
-			<th>Numero di telefono</th>
+			<th>Phone Number</th>
 				<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
 			
 			<th></th>
@@ -71,7 +71,7 @@
 <form id="floatright" action="DataCustomerServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="data_name">Nome</label>
+      <label for="data_name">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_name" name="name" placeholder="inserisci nome">
@@ -79,7 +79,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="data_surname">Cognome</label>
+     <label for="data_surname">Surname</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_surname" name="surname" placeholder="inserisci cognome"> 
@@ -105,7 +105,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="data_phoneNumber">Numero di telefono</label>
+     <label for="data_phoneNumber">Phone Number</label>
     </div>
    		 <div class="col-75">
       <input type="text" id="data_phoneNumber" name="phoneNumber" placeholder="inserisci numero di telefono"> 

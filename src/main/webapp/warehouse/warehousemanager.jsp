@@ -26,9 +26,9 @@
 <br>
 	<table>
 		<tr>
-			<th>Id Magazzino</th>
-			<th>Citta'</th>
-			<th>Capacita'</th>
+			<th>Warehouse ID</th>
+			<th>City</th>
+			<th>Capacity</th>
 			<c:if test="${fn:containsIgnoreCase(String, 'ADMIN')}"> 
 				<th></th>
 				<th></th>
@@ -61,7 +61,7 @@
 	<form id="floatright" action="WarehouseServlet?mode=insert" method="post">
 	  <div class="row">
 	    <div class="col-25">
-	      <label for="city">Citta'</label>
+	      <label for="city">City</label>
 	    </div>
 	    <div class="col-75">
 	      <input type="text" id="city" name="city" placeholder="inserisci citta'">
@@ -69,7 +69,7 @@
 	  </div>
 	  <div class="row">
 	    <div class="col-25">
-	     <label for="capacity">Capacita'</label>
+	     <label for="capacity">Capacity</label>
 	    </div>
 	    <div class="col-75">
 	      <input type="text" id="capacity" name="capacity" placeholder="inserisci capacita'"> 

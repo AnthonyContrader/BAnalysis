@@ -21,19 +21,19 @@
 <form id="floatleft" action="OrderServlet?mode=update&id=<%=o.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="order_quantity">Quantity</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="order_quantity" name="quantity" value=<%=o.getQuantity()%>>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
      <label for="order">Order Number</label>
     </div>
     <div class="col-75">
       <input
 			type="text" id="order" name="orderNumber" value=<%=o.getOrderNumber()%>> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="order_quantity">Quantity</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="order_quantity" name="quantity" value=<%=o.getQuantity()%>>
     </div>
   </div>
   <div class="row">

@@ -26,8 +26,8 @@
     <c:set var="String" value="${user.getUsertype()}"/> 
 	<table>
 		<tr>
-			<th>Quantity</th>
 			<th>Order Number</th>
+			<th>Quantity</th>
 			<th>Date</th>
 				<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
 					<th></th>
@@ -39,10 +39,8 @@
 			for (OrderDTO o : list) {
 		%>
 		<tr>
-			<td>
-				<%=o.getQuantity()%>
-			</td>
 			<td><a href=OrderServlet?mode=read&id=<%=o.getId()%>><%=o.getOrderNumber()%></a></td>
+			<td><%=o.getQuantity()%></td>
 			<td><%=o.getDate()%></td>
 			 
 			<c:if test="${fn:containsIgnoreCase(String, 'admin')}">   

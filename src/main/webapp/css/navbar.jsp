@@ -21,10 +21,10 @@
 		<c:if test="${fn:containsIgnoreCase(String, 'ADMIN')}">
 			<a href="UserServlet?mode=userlist">Users</a>
 		</c:if>
-		<a href="DataCustomerServlet?mode=datacustomerlist">Clienti</a> <!-- collegamento a fornitori -->
-		<a href="SupplierServlet?mode=supplierlist">Fornitori</a> <!-- collegamento a fornitori -->
-		<a href="OrderServlet?mode=orderlist">Ordini</a> <!-- collegamento a ordini -->
-		<a href="WarehouseServlet?mode=warehouselist">Magazzini</a> <!-- collegamento a magazzini -->
+		<a href="DataCustomerServlet?mode=datacustomerlist">Customer</a> <!-- collegamento a fornitori -->
+		<a href="SupplierServlet?mode=supplierlist">Suppliers</a> <!-- collegamento a fornitori -->
+		<a href="OrderServlet?mode=orderlist">Order</a> <!-- collegamento a ordini -->
+		<a href="WarehouseServlet?mode=warehouselist">Warehouse</a> <!-- collegamento a magazzini -->
 		<a href="LogoutServlet" id="logout">Logout</a>
 	</div>
 </body>

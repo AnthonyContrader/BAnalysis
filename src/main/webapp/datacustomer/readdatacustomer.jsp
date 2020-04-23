@@ -19,11 +19,11 @@
 
 <table>
 	<tr> 
-		<th>Nome</th>
-		<th>Cognome</th>
-		<th>Età</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Age</th>
 		<th>Email</th>
-		<th>Numero di telefono</th>
+		<th>Phone Number</th>
 	</tr>
 	<tr>
  

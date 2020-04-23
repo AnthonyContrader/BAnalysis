@@ -19,9 +19,9 @@
 
 <table>
 	<tr> 
-		<th>Magazzino N</th>
-		<th>Citta'</th>
-		<th>Capacita'</th>
+		<th>Warehouse N</th>
+		<th>City</th>
+		<th>Capacity'</th>
 	</tr>
 	<tr>
 		<td><%=w.getId()%></td>

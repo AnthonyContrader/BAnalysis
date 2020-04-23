@@ -18,16 +18,14 @@
 <%OrderDTO o = (OrderDTO) request.getAttribute("dto");%>
 
 <table>
-	<tr> 
-		<th>Quantity</th>
+	<tr>
 		<th>Order Number</th>
+		<th>Quantity</th>
 		<th>Date</th>
 	</tr>
 	<tr>
- 
-		
-		<td> <%=o.getQuantity()%></td>
 		<td> <%=o.getOrderNumber()%></td>
+		<td> <%=o.getQuantity()%></td>
 		<td> <%=o.getDate()%></td>
 	</tr>	
 </table>

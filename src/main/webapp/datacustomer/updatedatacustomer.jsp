@@ -21,7 +21,7 @@
 <form id="floatleft" action="DataCustomerServlet?mode=update&id=<%=d.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="data_name">Nome</label>
+      <label for="data_name">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_name" name="name" value=<%=d.getName()%>>
@@ -29,7 +29,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="data_surname">Cognome</label>
+     <label for="data_surname">Surname</label>
     </div>
     <div class="col-75">
       <input
@@ -38,7 +38,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="data_age">Età</label>
+      <label for="data_age">Age</label>
     </div>
    		 <div class="col-75">
  		 
@@ -60,7 +60,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="data_phoneNumber">Numero di telefono</label>
+      <label for="data_phoneNumber">Phone Number</label>
     </div>
    		 <div class="col-75">
  		 

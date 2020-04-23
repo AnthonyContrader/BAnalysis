@@ -20,7 +20,7 @@
 <form id="floatleft" action="WarehouseServlet?mode=update&id=<%=w.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="city">Citta'</label>
+      <label for="city">City</label>
     </div>
     <div class="col-75">
       <input type="text" id="city" name="city" value=<%=w.getCity()%>>
@@ -28,7 +28,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="capacity">Capacita'</label>
+     <label for="capacity">Capacity</label>
     </div>
     <div class="col-75">
       <input type="text" id="capacity" name="capacity" value=<%=w.getCapacity()%>> 
