@@ -61,18 +61,18 @@
 <form id="floatright" action="OrderServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="order_quantity">Quantity</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="order_quantity" name="quantity" placeholder="inserisci quantity">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
      <label for="order_number">Order Number</label>
     </div>
     <div class="col-75">
       <input type="text" id="order_number" name="orderNumber" placeholder="inserisci numero ordine"> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="order_quantity">Quantity</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="order_quantity" name="quantity" placeholder="inserisci quantita'">
     </div>
   </div>
   <div class="row">
