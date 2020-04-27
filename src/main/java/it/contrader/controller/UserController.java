@@ -23,13 +23,14 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {
-
+		
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
-
+		
 		switch (userDTO.getUsertype()) {
 
 		case ADMIN:
+			System.out.println("Sono in homeadmin");
 			return "homeadmin";
 
 		case USER:
@@ -60,8 +61,9 @@ public class UserController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id,
+			@RequestParam("username") String username, @RequestParam("password") String password,
+			@RequestParam("usertype") Usertype usertype) {
 
 		UserDTO dto = new UserDTO();
 		dto.setId(id);

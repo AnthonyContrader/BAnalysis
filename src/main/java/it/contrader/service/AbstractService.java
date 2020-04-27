@@ -16,9 +16,6 @@ public abstract class AbstractService<Entity, DTO> implements ServiceDTO<DTO> {
 	@Autowired
 	protected Converter<Entity, DTO> converter;
 
-	public AbstractService() {
-	}
-
 	@Override
 	public DTO insert(DTO dto) {
 		return converter.toDTO(crudRepository.save(converter.toEntity(dto)));
