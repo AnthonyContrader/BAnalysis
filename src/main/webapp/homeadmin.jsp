@@ -1,4 +1,5 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -19,9 +20,14 @@
 <body>
 	<%@include file="css/header.jsp"%>
 
+    <c:set var="String" value="${user.getUsertype()}"/> 
 
 	<div class="navbar">
-		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
+		<a class="active" href="/homeadmin.jsp">Home</a> 
+		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
+		<a href=/user/getall>Users</a>
+			</c:if>  
+			
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
