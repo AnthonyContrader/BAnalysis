@@ -54,10 +54,9 @@
 					<label for="da">Date</label>
 				</div>
 				<div class="col-75">
-			
-					
-					<input type="text" id="da" name="date"
-						value=<%=o.getDate()%>>
+
+
+					<input type="text" id="da" name="date" value=<%=o.getDate()%>>
 				</div>
 				<input type="hidden" name="id" value=<%=o.getId()%>>
 			</div>

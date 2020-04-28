@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class OrderDTO {
-	
+
 	private Long id;
 	private int quantity;
 	private String orderNumber;

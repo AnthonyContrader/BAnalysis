@@ -1,14 +1,15 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
-<html lang="en"><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.OrderDTO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<html lang="en"><%@ page language="java"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"
+	import="it.contrader.dto.OrderDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="User Read">
- <link href="/css/vittoriostyle.css" rel="stylesheet">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>Read User</title>
 </head>
 <body>
@@ -18,8 +19,8 @@
 			href="/order/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<br>
-			<c:set var="String" value="${user.getUsertype()}" />
-	
+	<c:set var="String" value="${user.getUsertype()}" />
+
 
 	<div class="main">
 		<%
@@ -29,12 +30,12 @@
 
 		<table>
 			<tr>
-				
+
 				<th>Order Number</th>
 				<th>Quantity</th>
 				<th>Date</th>
 			</tr>
-			<tr> 
+			<tr>
 				<td><%=o.getOrderNumber()%></td>
 				<td><%=o.getQuantity()%></td>
 				<td><%=o.getDate()%></td>

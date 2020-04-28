@@ -27,7 +27,7 @@
 		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
 		<a href=/user/getall>Users</a>
 			</c:if>  
-			
+	    		<a href="/order/getall" id="order">Orders</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 

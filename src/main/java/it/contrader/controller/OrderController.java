@@ -1,6 +1,6 @@
 package it.contrader.controller;
 
-import javax.servlet.http.HttpServletRequest; 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.OrderDTO;
 
 import it.contrader.service.OrderService;
- 
 
 @Controller
 @RequestMapping("/order")
@@ -22,11 +21,9 @@ public class OrderController {
 
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
-//		System.out.println(
-//				"<---------------------------------Voglio vedere tutti gli orders--------------------------------------->");
+
 		setAll(request);
-//		System.out.println(
-//				"<-----------------------------------Ritorno a buon fine getAll(), orders ---------------------------------------->");
+
 		return "orders";
 	}
 

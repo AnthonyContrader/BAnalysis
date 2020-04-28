@@ -1,7 +1,5 @@
 package it.contrader.model;
 
-
-//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +20,9 @@ public class OrderSales {
 
 	private Long id;
 
-	
 	private int quantity;
-	
+
 	private String orderNumber;
 	private String date;
 
- }
+}
