@@ -17,10 +17,19 @@
 
 	<%@ include file="./css/header.jsp"%>
 
+    <c:set var="String" value="${user.getUsertype()}"/> 
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/order/getall">Orders</a><a href="/user/logout" id="logout">Logout</a>
+		<a href="/homeadmin.jsp">Home</a> 
+		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
+			<a href=/user/getall>Users</a>
+		</c:if>  
+		<a href="/datacustomer/getall" id="datacustomer">Customers</a>
+		<a class="active" href="/order/getall" id="order">Orders</a>
+		<a href="/supplier/getall" id="supplier">Suppliers</a>
+		<a href="/warehouse/getall" id="warehouse">Warehouses</a>
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
+
 	<div class="main">
 		<%
 			List<OrderDTO> list = (List<OrderDTO>) request.getSession().getAttribute("list");

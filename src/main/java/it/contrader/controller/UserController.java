@@ -30,7 +30,6 @@ public class UserController {
 		switch (userDTO.getUsertype()) {
 
 		case ADMIN:
-			System.out.println("<-----------------------Sono in homeadmin----------------------->");
 			return "homeadmin";
 
 		case USER:
@@ -43,9 +42,7 @@ public class UserController {
 
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
-		System.out.println("<---------------------------------Voglio vedere tutti gli users--------------------------------------->");
 		setAll(request);
-		System.out.println("<-----------------------------------Ritorno a buon fine getAll()---------------------------------------->");
 		return "users";
 	}
 

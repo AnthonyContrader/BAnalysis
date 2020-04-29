@@ -16,10 +16,16 @@
 </head>
 <body>
 <%@ include file="./css/header.jsp"%>
+    <c:set var="String" value="${user.getUsertype()}"/> 
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
-		<a href="/user/getall">Users</a> 
-		<a class="active" href=/warehouse/getall>Warehouses</a> 
+		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
+			<a href=/user/getall>Users</a>
+		</c:if>  
+		<a href="/datacustomer/getall" id="datacustomer">Customers</a>
+		<a href="/order/getall" id="order">Orders</a>
+		<a href="/supplier/getall" id="supplier">Suppliers</a>
+		<a class="active" href="/warehouse/getall" id="warehouse">Warehouses</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">

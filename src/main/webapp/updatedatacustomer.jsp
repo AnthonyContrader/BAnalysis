@@ -15,8 +15,7 @@
 <%@ include file="./css/header.jsp" %>
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a>
-  <a href="/user/getall">Users</a>
-  <a class="active" href="/datacustomer/getall">Dati Clienti</a>
+  <a class="active" href="/datacustomer/getall">Customers</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
@@ -27,7 +26,7 @@
 <form id="floatleft" action="/datacustomer/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="datacustomer">Nome</label>
+      <label for="datacustomer">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_name" name="name" value=<%=d.getName()%>>
@@ -35,7 +34,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="datacustomer">Cognome</label>
+      <label for="datacustomer">Surname</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_surname" name="surname" value=<%=d.getSurname()%>>
@@ -43,7 +42,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="datacustomer">Età</label>
+      <label for="datacustomer">Age</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_age" name="age" value=<%=d.getAge()%>>
@@ -59,7 +58,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="datacustomer">Numero di telefono</label>
+      <label for="datacustomer">Phone</label>
     </div>
     <div class="col-75">
       <input type="text" id="data_phoneNumber" name="phoneNumber" value=<%=d.getPhoneNumber()%>>

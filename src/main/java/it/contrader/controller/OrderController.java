@@ -45,7 +45,6 @@ public class OrderController {
 			@RequestParam("quantity") int quantity, @RequestParam("orderNumber") String orderNumber,
 			@RequestParam("date") String date) {
 
-//		System.out.println("<------------------------------------------@PostMapping(\"/update\")---------------------------->");
 		OrderDTO dto = new OrderDTO();
 		dto.setId(id);
 		dto.setQuantity(quantity);
@@ -71,7 +70,6 @@ public class OrderController {
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
-		System.out.println("@GetMapping(\"/read\")");
 		request.getSession().setAttribute("dto", service.read(id));
 		return "readorder";
 	}

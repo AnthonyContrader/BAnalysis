@@ -14,16 +14,17 @@
 <body>
 	<%@ include file="./css/header.jsp"%>
 	
-	
-
-	<div class="navbar">
 	<c:set var="String" value="${user.getUsertype()}"/> 
+	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
-       <c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
-		<a href=/user/getall>Users</a>
-			</c:if>  
-			<a class = "active" href="/datacustomer/getall">Dati Clienti</a>  
-			<a href="/user/logout" id="logout">Logout</a>
+		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
+			<a href=/user/getall>Users</a>
+		</c:if>  
+		<a class="active" href="/datacustomer/getall" id="datacustomer">Customers</a>
+		<a href="/order/getall" id="order">Orders</a>
+		<a href="/supplier/getall" id="supplier">Suppliers</a>
+		<a href="/warehouse/getall" id="warehouse">Warehouses</a>
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
 	<div class="main">
@@ -35,11 +36,11 @@
 		
 		<table>
 			<tr>
-				<th>Nome</th>
-				<th>Cognome</th>
-				<th>Età</th>
+				<th>Name</th>
+				<th>Surname</th>
+				<th>Age</th>
 				<th>Email</th>
-				<th>Numero di telefono</th>
+				<th>Phone</th>
 				<c:if test="${fn:containsIgnoreCase(String, 'admin')}">
 				<th></th>
 				<th></th>
@@ -71,7 +72,7 @@
 		<form id="floatright" action="/datacustomer/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="name">Nome</label>
+					<label for="name">Name</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="data_name" name="name"
@@ -80,7 +81,7 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="surname">Cognome</label>
+					<label for="surname">Surname</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="data_surname" name="surname"
@@ -89,7 +90,7 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="datacustomer">Età</label>
+					<label for="datacustomer">Age</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="data_age" name="age"
@@ -107,7 +108,7 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="datacustomer">Numero di telefono</label>
+					<label for="datacustomer">Phone</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="data_phoneNumber" name="phoneNumber"

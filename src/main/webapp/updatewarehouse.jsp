@@ -16,7 +16,6 @@
 	<%@ include file="./css/header.jsp" %>
 	<div class="navbar">
 	  <a href="/homeadmin.jsp">Home</a>
-	  <a href="/user/getall">Users</a>
 	  <a class="active" href=/warehouse/getall>Warehouses</a> 
 	  <a href="/user/logout" id="logout">Logout</a>
 	</div>

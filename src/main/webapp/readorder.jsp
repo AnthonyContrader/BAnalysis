@@ -15,8 +15,9 @@
 <body>
 	<%@ include file="./css/header.jsp"%>
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/order/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
+		<a href="/homeadmin.jsp">Home</a>
+		<a class="active" href="/order/getall">Orders</a>
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<br>
 	<c:set var="String" value="${user.getUsertype()}" />

@@ -9,84 +9,74 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.contrader.dto.DataCustomerDTO;
-import it.contrader.service.DataCustomerService;
+import it.contrader.dto.SupplierDTO;
+import it.contrader.service.SupplierService;
 
 @Controller
-@RequestMapping("/datacustomer")
-public class DataCustomerController {
+@RequestMapping("/supplier")
+public class SupplierController {
 
 	@Autowired
-	private DataCustomerService service;
+	private SupplierService service;
 
-{
-		
-	}
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "datacustomers";
+		return "suppliers";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "datacustomers";
+		return "suppliers";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updatedatacustomer";
+		return "updatesupplier";
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id,
-			@RequestParam("name") String name, @RequestParam("surname") String surname, @RequestParam("age") int age, @RequestParam("email") String email, @RequestParam("phoneNumber") String phoneNumber)
-	{
+	public String update(HttpServletRequest request,
+			@RequestParam("id")         Long id,
+			@RequestParam("name")       String name, 
+			@RequestParam("country")    String country,
+			@RequestParam("email")      String email) {
 
-		DataCustomerDTO dto = new DataCustomerDTO();
+		SupplierDTO dto = new SupplierDTO();
 		dto.setId(id);
 		dto.setName(name);
-		dto.setSurname(surname);
-		dto.setAge(age);
+		dto.setCountry(country);
 		dto.setEmail(email);
-		dto.setPhoneNumber(phoneNumber);
 		service.update(dto);
 		setAll(request);
-		return "datacustomers";
-
+		return "suppliers";
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("age") int age, @RequestParam("email") String email, @RequestParam("phoneNumber") String phoneNumber) {
-		DataCustomerDTO dto = new DataCustomerDTO();
+	public String insert(HttpServletRequest request,
+			@RequestParam("name")       String name,
+			@RequestParam("country")    String country, 
+			@RequestParam("email")      String email) {
+		SupplierDTO dto = new SupplierDTO();
 		dto.setName(name);
-		dto.setSurname(surname);
-		dto.setAge(age);
+		dto.setCountry(country);
 		dto.setEmail(email);
-		dto.setPhoneNumber(phoneNumber);
 		service.insert(dto);
 		setAll(request);
-		return "datacustomers";
+		return "suppliers";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readdatacustomer";
-	}
-
-	@GetMapping("/logout")
-	public String logout(HttpServletRequest request) {
-		request.getSession().invalidate();
-		return "index";
+		return "readsupplier";
 	}
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
 	}
-	
 }
+
