@@ -13,7 +13,7 @@ public class OrderConverter extends AbstractConverter<OrderSales, OrderDTO> {
 		OrderSales order = null;
 		if (orderDTO != null) {
 			order = new OrderSales(orderDTO.getId(), orderDTO.getQuantity(), orderDTO.getOrderNumber(),
-					orderDTO.getDate());
+					orderDTO.getDate(), orderDTO.getSupplier());
 		}
 		return order;
 	}
@@ -22,7 +22,8 @@ public class OrderConverter extends AbstractConverter<OrderSales, OrderDTO> {
 	public OrderDTO toDTO(OrderSales order) {
 		OrderDTO orderDTO = null;
 		if (order != null) {
-			orderDTO = new OrderDTO(order.getId(), order.getQuantity(), order.getOrderNumber(), order.getDate());
+			orderDTO = new OrderDTO(order.getId(), order.getQuantity(), order.getOrderNumber(), order.getDate(),
+					order.getSupplier());
 
 		}
 		return orderDTO;

@@ -1,5 +1,7 @@
 package it.contrader.dto;
 
+import it.contrader.model.Supplier;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +16,5 @@ public class OrderDTO {
 	private int quantity;
 	private String orderNumber;
 	private String date;
-
+	private Supplier supplier;
 }

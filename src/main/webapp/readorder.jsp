@@ -35,11 +35,13 @@
 				<th>Order Number</th>
 				<th>Quantity</th>
 				<th>Date</th>
+				<th>Supplier</th>
 			</tr>
 			<tr>
 				<td><%=o.getOrderNumber()%></td>
 				<td><%=o.getQuantity()%></td>
 				<td><%=o.getDate()%></td>
+				<td><%=o.getSupplier()%></td>
 			</tr>
 		</table>
 
