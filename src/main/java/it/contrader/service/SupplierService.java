@@ -18,9 +18,13 @@ public class SupplierService extends AbstractService<Supplier, SupplierDTO> {
 	private SupplierRepository repository;
 	
 
-//	public SupplierDTO findByName(String name) {
-//		return converter.toDTO(repository.findByName(name));
-//	}
+	public SupplierDTO findByName(String name) {
+		return converter.toDTO(repository.findByName(name));
+	}
+	
+	public Supplier findEntityByName(String name) {
+		return converter.toEntity(converter.toDTO(repository.findByName(name)));
+	}
 	
 	public List<SupplierDTO> getAllElements() {
 		return converter.toDTOList(repository.findAll());

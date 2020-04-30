@@ -1,10 +1,9 @@
+<%@ page import="it.contrader.dto.SupplierDTO" import="java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html lang="en"><%@ page language="java"
 	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"
 	import="it.contrader.dto.OrderDTO"%>
-<!DOCTYPE html>
-<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -60,6 +59,20 @@
 					<input type="text" id="da" name="date" value=<%=o.getDate()%>>
 				</div>
 				<input type="hidden" name="id" value=<%=o.getId()%>>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="da">Date</label>
+				</div>
+				<div class="col-75">
+					<select id="type" name="name_of_supplier">
+						<c:forEach items="${supplierList}" var="item">
+							<option value="${item.getName()}">
+								${item.getName()}
+							</option>
+						</c:forEach>
+					</select>
+				</div>
 			</div>
 			<c:if test="${fn:containsIgnoreCase(String, 'admin')}">
 

@@ -112,18 +112,19 @@
 				</div>
 				<div class="col-75">
 
-					<select id="type" name="supplier">
+					<select id="type" name="name_of_supplier">
 
 						<c:forEach items="${supplierList}" var="item">
 
-							<option value="supplier">
-								<p>${item.getName()}</p>
+							<option value="${item.getName()}">
+								${item.getName()}
 							</option>
 
 						</c:forEach>
 					</select>
 				</div>
 				<button type="submit">Insert</button>
+			</div>
 		</form>
 
 	</div>

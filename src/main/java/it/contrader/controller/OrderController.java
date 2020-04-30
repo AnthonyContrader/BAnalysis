@@ -1,5 +1,7 @@
 package it.contrader.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,9 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.OrderDTO;
+import it.contrader.dto.SupplierDTO;
 import it.contrader.model.Supplier;
 //import it.contrader.model.User.Usertype;
 import it.contrader.service.OrderService;
+import it.contrader.service.SupplierService;
+import it.contrader.converter.*;
+import it.contrader.converter.SupplierConverter;
+import it.contrader.dao.SupplierRepository;
 
 @Controller
 @RequestMapping("/order")
@@ -20,8 +27,16 @@ public class OrderController {
 	@Autowired
 	private OrderService service;
 
+	@Autowired
+	private SupplierService serviceSupplier;
+
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
+		
+		// ho messo una variabile globale per supplier
+		List<SupplierDTO> supplierListDTO;
+		supplierListDTO = serviceSupplier.getAllElements();
+		request.getSession().setAttribute("supplierList", supplierListDTO);
 
 		setAll(request);
 
@@ -45,9 +60,11 @@ public class OrderController {
 	public String update(HttpServletRequest request, @RequestParam("id") Long id,
 			@RequestParam("quantity") int quantity, @RequestParam("orderNumber") String orderNumber,
 			@RequestParam("date") String date, 
-			@RequestParam("supplier") Supplier supplier) {
+			@RequestParam("name_of_supplier") String supplier_name) {
 
 		OrderDTO dto = new OrderDTO();
+		Supplier supplier = new Supplier();
+		supplier = serviceSupplier.findEntityByName(supplier_name);
 		dto.setId(id);
 		dto.setQuantity(quantity);
 		dto.setOrderNumber(orderNumber);
@@ -56,14 +73,14 @@ public class OrderController {
 		service.update(dto);
 		setAll(request);
 		return "orders";
-
 	}
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("quantity") int quantity,
 			@RequestParam("orderNumber") String orderNumber, @RequestParam("date") String date, 
-			@RequestParam("supplier") Supplier supplier) {
+			@RequestParam("name_of_supplier") String supplier_name) {
 		OrderDTO dto = new OrderDTO();
+		Supplier supplier       = new Supplier();
 		dto.setQuantity(quantity);
 		dto.setOrderNumber(orderNumber);
 		dto.setDate(date);
