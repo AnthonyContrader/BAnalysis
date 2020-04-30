@@ -23,13 +23,11 @@
 		%>
 		<table>
 			<tr>
-				<th>ID</th>
 				<th>Name</th>
 				<th>Country</th>
 				<th>Email</th>
 			</tr>
 			<tr>
-				<td><%=u.getId()%></td>
 				<td><%=u.getName()%></td>
 				<td><%=u.getCountry()%></td>
 				<td><%=u.getEmail()%></td>

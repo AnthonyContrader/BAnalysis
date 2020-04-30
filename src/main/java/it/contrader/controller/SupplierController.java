@@ -76,7 +76,6 @@ public class SupplierController {
 	}
 
 	private void setAll(HttpServletRequest request) {
-		System.out.println("L'ho cambiata in lista");
 		request.getSession().setAttribute("lista", service.getAll());
 	}
 }

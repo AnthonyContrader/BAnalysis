@@ -41,7 +41,7 @@
 				<td><%=o.getOrderNumber()%></td>
 				<td><%=o.getQuantity()%></td>
 				<td><%=o.getDate()%></td>
-				<td><%=o.getSupplier()%></td>
+				<td><a href="/supplier/read?id=<%=o.getSupplier().getId()%>"><%=o.getSupplier().getName()%></a></td> 
 			</tr>
 		</table>
 
