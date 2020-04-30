@@ -79,8 +79,12 @@ public class OrderController {
 	public String insert(HttpServletRequest request, @RequestParam("quantity") int quantity,
 			@RequestParam("orderNumber") String orderNumber, @RequestParam("date") String date, 
 			@RequestParam("name_of_supplier") String supplier_name) {
+		
 		OrderDTO dto = new OrderDTO();
-		Supplier supplier       = new Supplier();
+		Supplier supplier = new Supplier();
+		supplier = serviceSupplier.findEntityByName(supplier_name);
+		System.out.println("chi e' il supplier " + supplier);
+		System.out.println("supplier.getCountry() " + supplier.getCountry());
 		dto.setQuantity(quantity);
 		dto.setOrderNumber(orderNumber);
 		dto.setDate(date);

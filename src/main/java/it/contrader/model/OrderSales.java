@@ -5,6 +5,7 @@ package it.contrader.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,15 +38,11 @@ public class OrderSales {
 	private String orderNumber;
 	private String date;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.MERGE)
 	@JoinColumn(name="supplier_id")
 	private Supplier supplier;
 	
-	public String getSupplierName() {
-//		supplier = new Supplier();
-//		return supplier.getName();
-		return "pino";
-	}
+
 	
 	
 }
