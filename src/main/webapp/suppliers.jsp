@@ -27,7 +27,7 @@
 	</div>
 	<div class="main">
 		<%
-			List<SupplierDTO> list = (List<SupplierDTO>) request.getSession().getAttribute("list");
+			List<SupplierDTO> list = (List<SupplierDTO>) request.getSession().getAttribute("lista");
 		%>
 		<br>
 		<table>

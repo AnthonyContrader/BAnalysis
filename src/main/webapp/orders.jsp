@@ -1,4 +1,6 @@
 <%@ page import="it.contrader.dto.OrderDTO" import="java.util.*"%>
+<%@ page import="it.contrader.dto.SupplierDTO" import="java.util.*"%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html lang="en">
@@ -17,17 +19,17 @@
 
 	<%@ include file="./css/header.jsp"%>
 
-    <c:set var="String" value="${user.getUsertype()}"/> 
+	<c:set var="String" value="${user.getUsertype()}" />
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<c:if test="${fn:containsIgnoreCase(String, 'admin')}"> 
+		<a href="/homeadmin.jsp">Home</a>
+		<c:if test="${fn:containsIgnoreCase(String, 'admin')}">
 			<a href=/user/getall>Users</a>
-		</c:if>  
-		<a href="/datacustomer/getall" id="datacustomer">Customers</a>
-		<a class="active" href="/order/getall" id="order">Orders</a>
-		<a href="/supplier/getall" id="supplier">Suppliers</a>
-		<a href="/warehouse/getall" id="warehouse">Warehouses</a>
-		<a href="/user/logout" id="logout">Logout</a>
+		</c:if>
+		<a href="/datacustomer/getall" id="datacustomer">Customers</a> <a
+			class="active" href="/order/getall" id="order">Orders</a> <a
+			href="/supplier/getall" id="supplier">Suppliers</a> <a
+			href="/warehouse/getall" id="warehouse">Warehouses</a> <a
+			href="/user/logout" id="logout">Logout</a>
 	</div>
 
 	<div class="main">
@@ -104,7 +106,24 @@
 						placeholder="inserisci data'">
 				</div>
 			</div>
-			<button type="submit">Insert</button>
+			<div class="row">
+				<div class="col-25">
+					<label for="type">Supplier</label>
+				</div>
+				<div class="col-75">
+
+					<select id="type" name="supplier">
+
+						<c:forEach items="${supplierList}" var="item">
+
+							<option value="supplier">
+								<p>${item.getName()}</p>
+							</option>
+
+						</c:forEach>
+					</select>
+				</div>
+				<button type="submit">Insert</button>
 		</form>
 
 	</div>

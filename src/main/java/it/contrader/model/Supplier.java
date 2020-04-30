@@ -15,15 +15,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
-@Table(name="supplier")
+//@Table(name="supplier")
 public class Supplier {
 	
-	public Supplier() {
-		System.out.println("Sono nel costruttore di Supplier()");
-	}
+//	public Supplier() {
+//		System.out.println("Sono nel costruttore di Supplier()");
+//	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

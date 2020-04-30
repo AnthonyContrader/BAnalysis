@@ -16,5 +16,6 @@ public class OrderDTO {
 	private int quantity;
 	private String orderNumber;
 	private String date;
-	private Supplier supplier;
+    private Supplier supplier;
+//	private String supplier;
 }

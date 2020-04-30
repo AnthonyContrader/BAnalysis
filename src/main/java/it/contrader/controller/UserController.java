@@ -1,5 +1,7 @@
 package it.contrader.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.contrader.dto.SupplierDTO;
 import it.contrader.dto.UserDTO;
 import it.contrader.model.User.Usertype;
+import it.contrader.service.SupplierService;
 import it.contrader.service.UserService;
 
 @Controller
@@ -20,13 +24,21 @@ public class UserController {
 	@Autowired
 	private UserService service;
 
+	@Autowired
+	private SupplierService serviceSupplier;
+
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {
-		
+
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
-		
+
+		// ho messo una variabile globale per supplier
+		List<SupplierDTO> supplierListDTO;
+		supplierListDTO = serviceSupplier.getAllElements();
+		request.getSession().setAttribute("supplierList", supplierListDTO);
+
 		switch (userDTO.getUsertype()) {
 
 		case ADMIN:
@@ -101,5 +113,6 @@ public class UserController {
 
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+
 	}
 }

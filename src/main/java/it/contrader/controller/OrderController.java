@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.OrderDTO;
-
+import it.contrader.model.Supplier;
+//import it.contrader.model.User.Usertype;
 import it.contrader.service.OrderService;
 
 @Controller
@@ -43,13 +44,15 @@ public class OrderController {
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id,
 			@RequestParam("quantity") int quantity, @RequestParam("orderNumber") String orderNumber,
-			@RequestParam("date") String date) {
+			@RequestParam("date") String date, 
+			@RequestParam("supplier") Supplier supplier) {
 
 		OrderDTO dto = new OrderDTO();
 		dto.setId(id);
 		dto.setQuantity(quantity);
 		dto.setOrderNumber(orderNumber);
 		dto.setDate(date);
+		dto.setSupplier(supplier);
 		service.update(dto);
 		setAll(request);
 		return "orders";
@@ -58,11 +61,13 @@ public class OrderController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("quantity") int quantity,
-			@RequestParam("orderNumber") String orderNumber, @RequestParam("date") String date) {
+			@RequestParam("orderNumber") String orderNumber, @RequestParam("date") String date, 
+			@RequestParam("supplier") Supplier supplier) {
 		OrderDTO dto = new OrderDTO();
 		dto.setQuantity(quantity);
 		dto.setOrderNumber(orderNumber);
 		dto.setDate(date);
+		dto.setSupplier(supplier);
 		service.insert(dto);
 		setAll(request);
 		return "orders";

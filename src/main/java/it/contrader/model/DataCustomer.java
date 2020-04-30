@@ -22,9 +22,6 @@ import lombok.NoArgsConstructor;
 
 public class DataCustomer {
 
-	public enum Usertype {
-		ADMIN, USER
-	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

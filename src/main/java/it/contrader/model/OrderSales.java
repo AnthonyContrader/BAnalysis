@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="order_sales")
+//@Table(name="order_sales")
 public class OrderSales {
 	
 
@@ -40,6 +40,12 @@ public class OrderSales {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="supplier_id")
 	private Supplier supplier;
+	
+	public String getSupplierName() {
+//		supplier = new Supplier();
+//		return supplier.getName();
+		return "pino";
+	}
 	
 	
 }
